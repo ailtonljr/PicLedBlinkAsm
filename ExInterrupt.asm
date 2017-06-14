@@ -39,13 +39,29 @@ START:
 	BSF INTCON, 7
 	
 Loop:
-	NOP ;Fazer alguma outra coisa
-	NOP
-	NOP
-	NOP
-	NOP
-	NOP
-	NOP
+	;Preencher
+	; End 5 - 10
+	; End 10 - 20
+	; End 11 - 15
+	MOVLW 10
+	MOVWF 5
+	MOVLW 20
+	MOVWF 10
+	MOVLW 15
+	MOVWF 11
+	
+	;Definir o enderço indireto
+	CLRF FSR0H ;Os quatro bits mais significativos vai ser 0
+	;Equivalente a usar o banco 0 de memória
+	
+	;FSR0L tem que receber o valor do end 5
+	MOVFF 5, FSR0L
+	
+	;Fazer a soma
+	;Colocar o W em 0
+	MOVLW 0
+	ADDWF POSTINC0, W
+	ADDWF POSTINC0, W
 	GOTO Loop
 	
 	
