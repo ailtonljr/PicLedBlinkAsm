@@ -15,7 +15,7 @@
 ;    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#include <p18F4550.inc>
+#include <p18f4550.inc>
 	
 	CONFIG WDT=OFF; disable watchdog timer
 	CONFIG MCLRE = ON; MCLEAR Pin on
